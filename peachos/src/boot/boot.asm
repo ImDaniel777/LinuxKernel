@@ -62,9 +62,9 @@ gdt_descriptor:
  
  [BITS 32]
  load32:
-    mov eax, 1
-    mov ecx, 100
-    mov edi, 0x0100000
+    mov eax, 1 ;starting sector
+    mov ecx, 100 ;how many sectors to load
+    mov edi, 0x0100000 ;the address to load the sectors into
     call ata_lba_read
     jmp CODE_SEG:0x0100000
 
